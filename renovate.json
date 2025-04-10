@@ -4,5 +4,12 @@
   ],
   "baseBranches": ["main", "/^release-\\d+\\.\\d+/"],
   "autoApprove": true,
-  "updatePinnedDependencies": false
+  "updatePinnedDependencies": false,
+  "tekton": {
+    "automerge": true,
+    "automergeStrategy": "rebase",
+    "automergeType": "pr",
+    "enabled": true,
+    "platformAutomerge": true
+  }
 }

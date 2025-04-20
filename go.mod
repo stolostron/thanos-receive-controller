@@ -107,6 +107,6 @@ require (
 )
 
 replace (
-	github.com/vimeo/galaxycache => github.com/thanos-community/galaxycache v0.0.0-20211122094458-3a32041a1f1e
+	github.com/vimeo/galaxycache => github.com/thanos-community/galaxycache 323e89e130ea
 	k8s.io/client-go => k8s.io/client-go v0.23.5
 )

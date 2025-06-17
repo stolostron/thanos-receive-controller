@@ -425,7 +425,7 @@ spec:
         resolver: bundles
     - name: push-dockerfile
       params:
-      - name: IMAGE_URL
+      - name: IMAGE
         value: $(tasks.build-container.results.IMAGE_URL)
       - name: IMAGE_DIGEST
         value: $(tasks.build-container.results.IMAGE_DIGEST)

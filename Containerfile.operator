@@ -7,14 +7,22 @@ WORKDIR /workspace
 
 COPY . .
 
-RUN  make thanos-receive-controller
+RUN go mod vendor && go build -mod vendor -v -o thanos-receive-controller 
 
 FROM registry.access.redhat.com/ubi8/ubi-minimal:latest
 
 COPY --from=builder /workspace/thanos-receive-controller /usr/bin/thanos-receive-controller
 
-RUN microdnf update -y && microdnf clean all
-
 USER 65534
 
 ENTRYPOINT ["/usr/bin/thanos-receive-controller"]
+
+LABEL com.redhat.component="thanos-receive-controller" \
+  name="thanos-receive-controller" \
+  summary="thanos-receive-controller" \
+  io.openshift.expose-services="" \
+  io.openshift.tags="data,images" \
+  io.k8s.display-name="thanos-receive-controller" \
+  maintainer="" \
+  description="thanos-receive-controller" \
+  io.k8s.description="thanos-receive-controller"

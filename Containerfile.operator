@@ -18,6 +18,7 @@ USER 65534
 ENTRYPOINT ["/usr/bin/thanos-receive-controller"]
 
 LABEL com.redhat.component="thanos-receive-controller" \
+      url="https://github.com/stolostron/thanos-receive-controller" \
   name="thanos-receive-controller" \
   summary="thanos-receive-controller" \
   io.openshift.expose-services="" \

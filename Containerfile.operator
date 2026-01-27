@@ -18,7 +18,8 @@ USER 65534
 ENTRYPOINT ["/usr/bin/thanos-receive-controller"]
 
 LABEL com.redhat.component="thanos-receive-controller" \
-  name="thanos-receive-controller" \
+  name="rhacm2/thanos-receive-controller-rhel9" \
+  cpe="cpe:/a:redhat:acm:2.14::el9" \
   summary="thanos-receive-controller" \
   io.openshift.expose-services="" \
   io.openshift.tags="data,images" \

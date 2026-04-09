@@ -120,7 +120,7 @@ require (
 	go.opentelemetry.io/contrib/propagators/jaeger v1.13.0 // indirect
 	go.opentelemetry.io/contrib/propagators/ot v1.13.0 // indirect
 	go.opentelemetry.io/otel v1.39.0 // indirect
-	go.opentelemetry.io/otel/bridge/opentracing v1.19.0 // indirect
+	go.opentelemetry.io/otel/bridge/opentracing v1.39.0 // indirect
 	go.opentelemetry.io/otel/metric v1.39.0 // indirect
 	go.opentelemetry.io/otel/sdk v1.39.0 // indirect
 	go.opentelemetry.io/otel/trace v1.39.0 // indirect

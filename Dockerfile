@@ -1,5 +1,5 @@
 #FROM golang:1.18-alpine3.15 as builder
-FROM registry.ci.openshift.org/stolostron/builder:go1.23-linux AS builder
+FROM registry.ci.openshift.org/stolostron/builder:go1.25-linux AS builder
 
 WORKDIR /workspace
 

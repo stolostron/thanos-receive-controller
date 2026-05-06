@@ -1,0 +1,30 @@
+# Copyright Contributors to the Open Cluster Management project
+# Licensed under the Apache License 2.0
+
+FROM registry-proxy.engineering.redhat.com/rh-osbs/openshift-golang-builder:v1.25.8 AS builder
+
+WORKDIR /workspace
+
+COPY . .
+
+RUN go mod vendor && CGO_ENABLED=1 GOEXPERIMENT=strictfipsruntime go build -mod vendor -v -o thanos-receive-controller 
+
+FROM registry-proxy.engineering.redhat.com/ubi9/ubi-minimal:latest
+
+COPY --from=builder /workspace/thanos-receive-controller /usr/bin/thanos-receive-controller
+
+USER 65534
+
+ENTRYPOINT ["/usr/bin/thanos-receive-controller"]
+
+LABEL com.redhat.component="thanos-receive-controller" \
+      url="https://github.com/stolostron/thanos-receive-controller" \
+  name="rhacm2/thanos-receive-controller-rhel9" \
+  cpe="cpe:/a:redhat:acm:2.16::el9" \
+  summary="thanos-receive-controller" \
+  io.openshift.expose-services="" \
+  io.openshift.tags="data,images" \
+  io.k8s.display-name="thanos-receive-controller" \
+  maintainer="" \
+  description="thanos-receive-controller" \
+  io.k8s.description="thanos-receive-controller"

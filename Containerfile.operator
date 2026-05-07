@@ -7,7 +7,7 @@ WORKDIR /workspace
 
 COPY . .
 
-RUN go mod vendor && go build -mod vendor -v -o thanos-receive-controller 
+RUN go mod vendor && CGO_ENABLED=1 GOEXPERIMENT=strictfipsruntime go build -mod vendor -v -o thanos-receive-controller 
 
 FROM registry.access.redhat.com/ubi9/ubi-minimal:latest
 

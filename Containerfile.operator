@@ -9,7 +9,7 @@ COPY . .
 
 RUN go mod vendor && go build -mod vendor -v -o thanos-receive-controller 
 
-FROM registry.access.redhat.com/ubi8/ubi-minimal:latest
+FROM registry.access.redhat.com/ubi9/ubi-minimal:latest
 
 COPY --from=builder /workspace/thanos-receive-controller /usr/bin/thanos-receive-controller
 

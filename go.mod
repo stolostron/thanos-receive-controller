@@ -158,8 +158,8 @@ require (
 replace (
 	// CVE-2026-42151: Azure AD OAuth client_secret exposed via config API.
 	// Upstream fix is in v0.311.3 but requires thanos update (incompatible API changes).
-	// This replace points to katekeiroz-dev/prometheus with the fix cherry-picked onto v2.48.1.
-	github.com/prometheus/prometheus => github.com/katekeiroz-dev/prometheus v0.0.0-20260805114039-08531774f9fc
+	// Fix cherry-picked onto stolostron/prometheus branch cve-2026-42151/v0.48.1 — do not delete branch.
+	github.com/prometheus/prometheus => github.com/stolostron/prometheus v0.0.0-20260805114039-08531774f9fc
 
 	github.com/vimeo/galaxycache => github.com/thanos-community/galaxycache v0.0.0-20211122094458-3a32041a1f1e
 	// Overriding to use latest commit.

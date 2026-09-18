@@ -160,3 +160,5 @@ replace (
 	// Overriding to use latest commit.
 	gopkg.in/alecthomas/kingpin.v2 => github.com/alecthomas/kingpin v1.3.8-0.20210301060133-17f40c25f497
 )
+
+replace github.com/prometheus/prometheus => github.com/stolostron/prometheus v0.0.0-20260805114039-08531774f9fc

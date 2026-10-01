@@ -28,7 +28,7 @@ jobs:
           TAGS+=($echo $(echo $tag | awk '{ print tolower($1) }'))
           ( IFS=$','; echo "${TAGS[*]}" )
       - name: Build and publish image(s) to registry
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v7
         with:
           context: .
           platforms: linux/amd64

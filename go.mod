@@ -1,6 +1,6 @@
 module github.com/observatorium/thanos-receive-controller
 
-go 1.18
+go 1.25.13
 
 require (
 	github.com/go-kit/log v0.2.0
